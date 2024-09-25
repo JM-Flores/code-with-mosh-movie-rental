@@ -10,8 +10,8 @@ describe("/api/genres", () => {
   });
 
   afterEach(async () => {
+    await server.close();
     await Genre.deleteMany({});
-    server.close();
   });
   afterAll(async () => {
     await mongoose.connection.close(); // Properly close DB connection after all tests
